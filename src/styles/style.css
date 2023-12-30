@@ -1,0 +1,18 @@
+.App {
+    margin-top: 80px;
+    margin-left: 15px;
+    box-sizing: inherit;
+    margin-bottom: 16px;
+}
+
+#test_button {
+
+}
+
+#great_space {
+    box-sizing: inherit;
+    flex: 1 1 auto;
+}
+#simple-menu{
+    margin-top: 40px;
+}

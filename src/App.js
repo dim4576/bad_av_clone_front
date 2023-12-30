@@ -1,7 +1,9 @@
 import Custom_app from "./Custom_app";
+import "./styles/style.css"
 import async from "async";
 import axios from "axios";
 import {useState} from "react";
+import ElevateAppBar from "./navbar";
 
 const API_URL = "https://catfact.ninja/breeds"
 
@@ -15,9 +17,7 @@ function App() {
 
     return (
         <div className="App">
-            <button onClick={getElements}>refresh</button>
-            <h1>hello world</h1>
-            <Custom_app eelements={eelements}/>
+            <ElevateAppBar gen_button=<button onClick={getElements}>refresh</button> hello=<h1>hello world</h1> app=<Custom_app eelements={eelements}/>/>
         </div>
     );
 }
