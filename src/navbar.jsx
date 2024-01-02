@@ -10,6 +10,7 @@ import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import SimpleMenu from "./menu";
+import ContentTable from './ContentTable'
 
 function ElevationScroll(props) {
     const {children, window} = props;
@@ -37,6 +38,7 @@ ElevationScroll.propTypes = {
 };
 
 export default function ElevateAppBar(props) {
+    let cards=[...new Array(13)].map(() => props.card)
     return (
         <React.Fragment>
             <CssBaseline/>
@@ -56,10 +58,10 @@ export default function ElevateAppBar(props) {
             <Toolbar/>
             <Container>
                 <Box my={2}>
-                    {console.log(props.props)}
                     {props.gen_button}
                     {props.hello}
                     {props.app}
+                    <ContentTable content={cards}/>
                     {[...new Array(12)]
                         .map(
                             () => `здесь будет размещён контент!!!`,

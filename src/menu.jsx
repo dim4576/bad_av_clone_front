@@ -27,6 +27,11 @@ export default function SimpleMenu() {
                 open={Boolean(anchorEl)}
             >
                 <table onMouseLeave={handleClose}>
+                    <tr id='under_line'>
+                        <th>
+                            <MenuItem onClick={handleClose}><strong>Open Menu</strong></MenuItem>
+                        </th>
+                    </tr>
                     <tr>
                         <th>
                             <MenuItem onClick={handleClose}>Profile</MenuItem>

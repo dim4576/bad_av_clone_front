@@ -13,6 +13,10 @@
     box-sizing: inherit;
     flex: 1 1 auto;
 }
-#simple-menu{
-    margin-top: 40px;
+#simple-menu {
+    margin-top: 0px;
+}
+
+#under_line {
+    background-color: #3F51B5;
 }
