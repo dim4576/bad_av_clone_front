@@ -5,8 +5,9 @@ const ContentTable = ({content}) => {
     console.log('[X]-> зашли в таблицу')
     let len = content.length;
     let res = [];
-    for (let i = 0; i < len / 4; i++) {
-        let pattern = [...new Array(4)].map((x, index) => content[i * 4 + index] ? content[i * 4 + index] : <div></div>)
+    const lenraw = 6
+    for (let i = 0; i < len / lenraw; i++) {
+        let pattern = [...new Array(lenraw)].map((x, index) => content[i * lenraw + index] ? content[i * lenraw + index] : <div></div>)
         res.push(<ContentRaw contentItems={pattern} key={i}/>)
     }
     console.log(res)

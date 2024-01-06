@@ -11,6 +11,8 @@ import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import SimpleMenu from "./menu";
 import ContentTable from './ContentTable'
+import MediaCard from "./card";
+
 
 function ElevationScroll(props) {
     const {children, window} = props;
@@ -38,7 +40,19 @@ ElevationScroll.propTypes = {
 };
 
 export default function ElevateAppBar(props) {
-    let cards=[...new Array(13)].map(() => props.card)
+    console.log('[elems] --> ')
+    console.log(props.elems)
+   /* let cards = [...new Array(1)].map((item, index) => MediaCard({
+        id: index,
+        brand: "empty",
+        model: "empty",
+        year: "1992",
+        prce: "0",
+        photos: "./contemplative-reptile.png"
+    }))*/
+    //if (props.elems.length !== 0) {
+    let cards = props.elems.map((x, key) => MediaCard(x, key = key))
+    //}
     return (
         <React.Fragment>
             <CssBaseline/>
@@ -58,10 +72,9 @@ export default function ElevateAppBar(props) {
             <Toolbar/>
             <Container>
                 <Box my={2}>
-                    {props.gen_button}
                     {props.hello}
-                    {props.app}
-                    <ContentTable content={cards}/>
+                    {props.gen_button}
+                    <ContentTable content={cards} key={cards.id}/>
                     {[...new Array(12)]
                         .map(
                             () => `здесь будет размещён контент!!!`,

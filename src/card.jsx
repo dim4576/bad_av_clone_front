@@ -17,7 +17,8 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard() {
+export default function MediaCard(elem) {
+  //console.log("[in media card elem] --> ", elem)
   const classes = useStyles();
 
   return (
@@ -25,16 +26,15 @@ export default function MediaCard() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="contemplative-reptile.jpg"
-          title="Contemplative Reptile"
+          image={elem.photos}
+          title={elem.brand}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            {elem.model}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            price: {elem.price}
           </Typography>
         </CardContent>
       </CardActionArea>
