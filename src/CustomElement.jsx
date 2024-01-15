@@ -1,6 +1,6 @@
 import React from "react";
 
-const Custom_element = (props) => {
+const CustomElement = (props) => {
     return(
         <div className='eelement'>
             <h1>_______________________________</h1>
@@ -24,4 +24,4 @@ const Custom_element = (props) => {
     )
 }
 
-export default Custom_element
+export default CustomElement

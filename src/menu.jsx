@@ -3,9 +3,11 @@ import "./styles/style.css"
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import {useNavigate} from 'react-router-dom';
 
 export default function SimpleMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const navigate = useNavigate();
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -14,6 +16,14 @@ export default function SimpleMenu() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const handleToPageMain = () => {
+        navigate('/')
+    }
+
+    const handleToPageAbout = () => {
+        navigate('/about')
+    }
 
     return (
         <div>
@@ -29,12 +39,12 @@ export default function SimpleMenu() {
                 <table onMouseLeave={handleClose}>
                     <tr id='under_line'>
                         <th>
-                            <MenuItem onClick={handleClose}><strong>Open Menu</strong></MenuItem>
+                            <MenuItem onClick={handleToPageMain}><strong>Main Page</strong></MenuItem>
                         </th>
                     </tr>
                     <tr>
                         <th>
-                            <MenuItem onClick={handleClose}>Profile</MenuItem>
+                            <MenuItem onClick={handleToPageAbout}>About</MenuItem>
                         </th>
                     </tr>
                     <tr>

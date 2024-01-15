@@ -1,5 +1,5 @@
 import React from "react";
-import Custom_element from "./Custom_element";
+import CustomElement from "./CustomElement";
 
 const Custom_app = ({eelements}) => {
     if (!eelements.length) {
@@ -9,7 +9,7 @@ const Custom_app = ({eelements}) => {
     return (
         <div>
             {
-                eelements.map(eelement => <Custom_element eelement = {eelement} key = {eelement.id}/>)
+                eelements.map(eelement => <CustomElement eelement = {eelement} key = {eelement.id}/>)
             }
         </div>
     )
