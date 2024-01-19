@@ -5,30 +5,34 @@ import ElevateAppBar from "./navbar";
 import ElevateAppBarUniversal from "./navUniversal";
 import {Route} from 'react-router-dom';
 import {Routes} from 'react-router-dom';
+import Login from "./Login";
 
 const API_URL = "http://127.0.0.1:8000/cars/car/"
-
 function App() {
+    alert('enter')
+    const [token, setToken] = useState(localStorage.getItem('token'))
+
     return (
         <div className="App">
+            <h1>lubimaya {token}</h1>
             <Routes>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/" element={<Home/>}/>
+                <Route path="/login" element={<Login setToken ={setToken}/>}/>
             </Routes>
         </div>
     );
 }
 
 const About = () => {
+    alert('enter about')
     return (
-        <ElevateAppBarUniversal content=<h1>О нас</h1>
-    />
+        <ElevateAppBarUniversal content=<h1>О нас</h1> />
     )
 }
 
 function Home() {
-    console.log('[home] -> enter')
-
+    alert('enter home')
     const [elements, setElements] = useState(() => {
         getElements().then()
         return []
