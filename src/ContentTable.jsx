@@ -14,9 +14,11 @@ const ContentTable = ({content}) => {
     return (
         <div>
             <table>
+                <thead></thead>
                 <tbody>
                 {res}
                 </tbody>
+                <tfoot></tfoot>
             </table>
         </div>
     )

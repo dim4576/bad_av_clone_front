@@ -25,6 +25,15 @@ export default function SimpleMenu() {
         navigate('/about')
     }
 
+    const handleLogin = () => {
+        navigate('/login')
+    }
+
+    const handleLogout = () => {
+        localStorage.setItem('token', '')
+        navigate('/login')
+    }
+
     return (
         <div>
             <Button aria-controls="simple-menu" aria-haspopup="true" onMouseEnter={handleClick}>
@@ -37,6 +46,8 @@ export default function SimpleMenu() {
                 open={Boolean(anchorEl)}
             >
                 <table onMouseLeave={handleClose}>
+                    <thead></thead>
+                    <tbody>
                     <tr id='under_line'>
                         <th>
                             <MenuItem onClick={handleToPageMain}><strong>Main Page</strong></MenuItem>
@@ -54,9 +65,16 @@ export default function SimpleMenu() {
                     </tr>
                     <tr>
                         <th>
-                            <MenuItem onClick={handleClose}>Logout</MenuItem>
+                            <MenuItem onClick={handleLogin}>Login</MenuItem>
                         </th>
                     </tr>
+                    <tr>
+                        <th>
+                            <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                        </th>
+                    </tr>
+                    </tbody>
+                    <tfoot></tfoot>
                 </table>
             </Menu>
         </div>
