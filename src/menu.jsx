@@ -25,10 +25,6 @@ export default function SimpleMenu() {
         navigate('/about')
     }
 
-    const handleLogin = () => {
-        navigate('/login')
-    }
-
     return (
         <div>
             <Button aria-controls="simple-menu" aria-haspopup="true" onMouseEnter={handleClick}>
@@ -53,7 +49,7 @@ export default function SimpleMenu() {
                     </tr>
                     <tr>
                         <th>
-                            <MenuItem onClick={handleLogin}>login</MenuItem>
+                            <MenuItem onClick={handleClose}>My account</MenuItem>
                         </th>
                     </tr>
                     <tr>
